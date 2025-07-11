@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+</head>
+<body style="font-family: Arial, sans-serif;">
+  <h2>Thank you for your order, {{ name }}!</h2>
+  <p>Your order has been successfully placed. Here are the details:</p>
+
+  <p><strong>Order ID:</strong> {{ order_id }}</p>
+  <p><strong>Date:</strong> {{ order_date }}</p>
+
+  <h3>Items:</h3>
+  <ul>
+    {% for item in items %}
+      <li>{{ item.jewelry_item.name }} (x{{ item.quantity }}) - ₹{{ item.jewelry_item.price }}</li>
+    {% endfor %}
+  </ul>
+
+  <p><strong>Total:</strong> ₹{{ total }}</p>
+
+  <p>We’ll notify you once your order is shipped. If you have any questions, feel free to reply to this email.</p>
+
+  <p>Best regards,<br>The Jewellery Shop Team</p>
+</body>
+</html>
